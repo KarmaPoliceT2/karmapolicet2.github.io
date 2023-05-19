@@ -6,7 +6,7 @@ This documentation is the process used to setup a RocketPool node with 2x valida
 
 ## Conventions
 
-- Items inside <> characters are to be substituted with your own values
+- Items inside <  > characters are to be substituted with your own values
 - Items with :exclamation: have an alternate step for implementing in TestNet
   - The alternate step will be marked as a markdown quote such as this:
        > This is an alternate step taken for TestNet setup
