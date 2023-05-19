@@ -5,7 +5,7 @@
 - You have an ubuntu 22.04.1 LTS image on a USB drive for installation
 - You have booted the system into the ubuntu installer
 
-## 1. Install Ubuntu
+## Install Ubuntu
 
 You may have some regional variations to the following. These settings are what was used for a US English install with the system located on the west coast of the United States.
 
