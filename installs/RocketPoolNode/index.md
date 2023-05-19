@@ -15,13 +15,14 @@ This documentation is the process used to setup a RocketPool node with 2x valida
 
 - You have a system built with no operating system on it, and on which only your node will run.
   - My system:
-    | Component | Description | Cost | Date |
-    | --------- | ----------- | ---- | ----- |
-    | NUC | Intel NUC12WSHi7 | $645.00 | 2023-04-20 |
-    | RAM | Crucial 32GB (2x16GB) DDR4 3200MHz CL22 | $68.99 | 2023-04-20 |
-    | SSD | Samsung 990 PRO 2TB PCIe 4.0 m.2 | $179.99 | 2023-04-20 |
-    | Hardware Wallet | Ledger Nano S Plus | ?? | ?? |
-    | Seed Storage | Cryptotag Zeus | ?? | ?? |
+
+      | Component | Description | Cost | Date |
+      | --------- | ----------- | ---- | ----- |
+      | NUC | Intel NUC12WSHi7 | $645.00 | 2023-04-20 |
+      | RAM | Crucial 32GB (2x16GB) DDR4 3200MHz CL22 | $68.99 | 2023-04-20 |
+      | SSD | Samsung 990 PRO 2TB PCIe 4.0 m.2 | $179.99 | 2023-04-20 |
+      | Hardware Wallet | Ledger Nano S Plus | ?? | ?? |
+      | Seed Storage | Cryptotag Zeus | ?? | ?? |
 
 ## Table of Contents
 
