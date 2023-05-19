@@ -72,19 +72,21 @@ You may have some regional variations to the following. These settings are what 
 
   1. After rebooting and logging in
 
-  2. Run the following commands
-
-      `sudo sysctl vm.swappiness=6`
-
-      `sudo sysctl vm.vfs_cache_pressure=10`
-
-  3. Edit the file `/etc/sysctl.conf` and add the following two lines to the end of the file:
+  2. Edit the file `/etc/sysctl.conf` and add the following two lines to the end of the file:
 
       ```text
       vm.swappiness=6
       vm.vfs_cache_pressure=10
       ```
 
+      > Read more about these settings [swappiness](https://sysctl-explorer.net/vm/swappiness/) and [vfs_cache_pressure](https://sysctl-explorer.net/vm/vfs_cache_pressure/)
+
+  3. Run the following command to make this effective for the running system
+
+      `sudo sysctl -p`
+
 - **Update the server**: Get the latest software via the following command:
 
   `sudo apt update && sudo apt upgrade`
+
+- **Reboot the system**
