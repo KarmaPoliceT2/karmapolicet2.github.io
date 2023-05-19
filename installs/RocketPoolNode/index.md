@@ -25,6 +25,6 @@ This documentation is the process used to setup a RocketPool node with 2x valida
 
 ## Table of Contents
 
- 1. OS Installation
+ 1. [OS Installation](os_installation.md)
  2. OS Hardening
  3. Wallets, Seeds & Addresses
