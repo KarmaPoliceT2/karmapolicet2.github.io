@@ -85,6 +85,16 @@ You may have some regional variations to the following. These settings are what 
 
       `sudo sysctl -p`
 
+- **Set the Timezone**:
+
+  1. You can see what timezone your system is currently set to (probably UTC) via the `timedatectl` command
+  2. A list of available timezones can be seen with `timedatectl list-timezones`
+  3. Change the timezone to the one you want with the command:
+
+      ```text
+      sudo timedatectl set-timezone < your/time_zone >
+      ```
+
 - **Update the server**: Get the latest software via the following command:
 
   `sudo apt update && sudo apt upgrade`
