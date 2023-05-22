@@ -1,0 +1,16 @@
+# Wallets & Accounts
+
+This section attempts to consolidate the wallets you'll need and/or already have:
+
+1. Metamask Wallet
+
+    1. **Funding Account**: The first account you'll need here will be one with some ETH in it to fund the node wallet for transaction fees. This could be a native MM account or one linked through MM to your hardware wallet.
+    2. **Voting Delegate Account**: This is an address that you will use to vote on rocketpool governance votes. This could be a native MM account or one linked through MM to your hardware wallet.
+
+2. Hardware Wallet
+
+    1. **Withdrawal Account**: The first (maybe second if your Funding Account is also on the hardware wallet ) account you'll need here is a withdrawal account. This is where rewards and withdrawals from your node will be sent to when you withdraw them. This should be linked to MM but NOT a MM address natively.
+
+3. Node Wallet
+
+    1. **Fees Account**: The first account on the node will be primarily responsible for holding enough ETH to cover transaction fees by the node.
