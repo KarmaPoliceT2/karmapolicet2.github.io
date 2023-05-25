@@ -77,3 +77,77 @@
     - Confirm that you want to join the smoothing pool
     - Result:
       > :exclamation: [Transaction](https://goerli.etherscan.io/tx/0x9a3cb5c80609bc3758a4be1e93d969b25d2e119e5ec89b79628d53426d243801)
+
+## Staking RPL
+
+1. For this walkthrough we'll assume staking on behalf of through the RP website as that is the safest way (requires no transfers) to make this happen.
+
+2. First you must whitelist the address you'll be staking from (the RPL account address) to do this run `rocketpool node add-address-to-stake-rpl-whitelist < your RPL account address >`
+
+    - Enter your desired max fee (or accept the sensible defaults)
+    - Confirm that you want to join the smoothing pool
+    - Result:
+      > :exclamation: [Transaction](https://goerli.etherscan.io/tx/0x7d898dc35b5c216c79d3b25535f590a2df7aa854fb39bf7c4b32de362e45099e)
+
+3. Navigate to the Stake on Behalf section of the RP website [here](https://stake.rocketpool.net/stake-behalf)
+
+    > :exclamation: [here](https://testnet.rocketpool.net/stake-behalf)
+
+    - Accept the terms
+    - Ensure your RPL account address is the one connected to the site
+    - Enter the amount you will allow the website to stake with (this is a max, not how much will actually be staked unless you set it later that way)
+    - Click the Approve button
+    - MM will ask you again to approve that amount, enter the same amount
+
+4. Once the amounts are approved, you'll be taken to the actual staking submission page to stake your RPL.
+
+    - Enter the amount to stake
+    - Enter your node's address (be sure you get this right via `rocketpool node status`)
+    - Press 'Stake'
+    - Confirm in MM
+    - You should see the amount you've staked now available in `rocketpool node status`
+
+## Staking ETH
+
+1. First you'll need to ensure the ETH you want to stake has been transferred to the node address
+
+2. Now it's time to actually get the minipool setup and staked with your ETH this is accomplished via a walkthrough command: `rocketpool node deposit`
+
+    - Continue = yes
+    - Select an amount to stake
+    - Enter your desired max fee (or accept the sensible defaults)
+    - Confirm you're sure you want to do this
+
+3. You now need to wait for the minipool to staking status, this can take significant time in production as there is usually a decently sized queue (monitor that queue [here](https://rocketscan.io/minipools/queue) )
+
+## Setup Grafana Monitoring
+
+1. First we need to open some ports for the grafana dashboard
+
+    - Get your IP CIDR
+
+        `docker inspect rocketpool_monitor-net | grep -Po "(?<=\"Subnet\": \")[0-9./]+"`
+
+    - Add the rule to allow the grafana port to talk to the node
+
+        `sudo ufw allow from < your IP CIDR > to any port 9103 comment "Allow prometheus access to node-exporter"`
+
+    - Add the rule to allow your local network to see the dashboard
+
+        `sudo ufw allow from < your network CIDR > proto tcp to any port 3100 comment 'Allow grafana from local network'`
+
+    - Restart the smartnode:
+
+        ```text
+        rocketpool service stop
+        rocketpool service start
+        ```
+
+2. Now we'll install the update tracker so the dashboard can show us when upgrades are available
+
+    - `rocketpool service install-update-tracker`
+
+    - ```text
+        rocketpool service stop
+        rocketpool service start
+        ```

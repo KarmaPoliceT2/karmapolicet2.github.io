@@ -6,6 +6,7 @@ This section attempts to consolidate the wallets you'll need and/or already have
 
     1. **Funding Account**: The first account you'll need here will be one with some ETH in it to fund the node wallet for transaction fees. This could be a native MM account or one linked through MM to your hardware wallet.
     2. **Voting Delegate Account**: This is an address that you will use to vote on rocketpool governance votes. This could be a native MM account or one linked through MM to your hardware wallet.
+    3. **RPL Account**: The address which holds RPL which you will use to stake as collateral for your validator. Also requires a small amount of ETH to support gas fees on the staking transactions.
 
 2. Hardware Wallet
 
